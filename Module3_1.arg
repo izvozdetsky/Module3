@@ -1,0 +1,15 @@
+FROM alpine
+
+RUN apk update --no-cache && apk add git
+
+ARG repo_url="https://github.com/izvozdetsky/git2.git"
+ENV REPO_URL=$repo_url
+
+#VOLUME /data
+WORKDIR /data
+
+RUN git clone $REPO_URL /data/my-git-image
+
+VOLUME /data
+
+CMD echo $REPO_URL
