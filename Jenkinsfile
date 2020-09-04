@@ -1,6 +1,6 @@
 node {
     try {
-        deleteDir()
+        
         environment {
              registry = "izvozdetsky/Module4"
              registryCredential = 'CrossFire109'
@@ -26,11 +26,11 @@ node {
                 }
             }
           }
-        stage('Remove Unused docker image') {
+          stage('Remove Unused docker image') {
             steps{
                  sh "docker rmi $registry:$BUILD_NUMBER"
             }
-         }
+          }
     } catch(e) {
         sh 'exit 1'
         throw e    
