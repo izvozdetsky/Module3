@@ -6,7 +6,6 @@ node {
              registryCredential = 'CrossFire109'
              dockerImage = ''
         }
-        
         stage ('Checkout') {
             git branch: 'master', url: 'https://github.com/izvozdetsky/Module3'
         }
