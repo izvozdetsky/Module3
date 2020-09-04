@@ -1,11 +1,6 @@
 node {
     try {
-        
-        environment {
-             registry = "izvozdetsky/Module4"
-             registryCredential = 'CrossFire109'
-             dockerImage = ''
-        }
+        deleteDir()
         agent any
         stage ('Checkout') {
             git branch: 'master', url: 'https://github.com/izvozdetsky/Module3'
