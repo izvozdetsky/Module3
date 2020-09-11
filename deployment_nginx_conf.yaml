@@ -20,17 +20,14 @@ spec:
       containers:
       - name: nginx
         env:
-          - name: SECRET_USERNAME
+          - name: LDAP_PASSWORD
             valueFrom:
               secretKeyRef:
                 name: mysecret
-                key: username
-          - name: NAME
+                key: ldap_password
+          - name: HOST
             valueFrom:
               configMapKeyRef:
                 name: env-config
-                key: name
-        envFrom:
-          - configMapRef:
-              name: env-config
+                key: host
         image: nginx
